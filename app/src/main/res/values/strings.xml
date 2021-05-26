@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">PSMUpdate</string>
+    <string name="startQuizz">COMMENCER LE QUIZZ</string>
+    <string name="logo">TODO</string>
+    <string name="txtquestion">txtQuest</string>
+    <string name="btnTest">Valider</string>
+    <string name="psm_update_quizz_app">PSM UPDATE QUIZZ APP</string>
+    <string name="namedesc">Entrez votre nom s\'il vous plaît</string>
+    <string name="nom">Nom</string>
+    <string name="commencer">Commencer</string>
+    <string name="radiobutton1">RadioButton</string>
+    <string name="radiobutton2">RadioButton</string>
+    <string name="radiobutton3">RadioButton</string>
+    <string name="radiobutton4">RadioButton</string>
+</resources>

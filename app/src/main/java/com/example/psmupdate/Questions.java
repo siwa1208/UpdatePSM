@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Handler;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -23,7 +24,7 @@ public class Questions extends AppCompatActivity {
             "Que signifie PSM ?",
             "Dans quelle université se trouve la formations PSM ?",
             "Depuis combien de temps la formations existe-t-elle ?",
-            "Qui est la personne chargée de la formation ?\n (Attention, il y a deux responsables)",
+            "Qui est la personne chargée de la formation ?",
             "D'où vient le nom Rhizome ?",
             "En quelle année a eu le premier projet Rhizome ?",
             "Quel a été le thème du projet Rhizome de l'année 2020-2021 ?",
@@ -54,7 +55,7 @@ public class Questions extends AppCompatActivity {
             "2001",
             "Les 20 ans de PSM",
             "Empreintes du mouvement",
-            "Quel est votre objet",
+            "Quel est votre objet ?",
             "Mobilité et développement durable",
             "Etude Numérique",
             "2004",
@@ -97,28 +98,28 @@ public class Questions extends AppCompatActivity {
     };
 
     String explication[] = {
-            "Le nom complet de la formation est Design Produit et Service Multimédia. La formation propose d’apprendre et de concevoir des produits multimédia (site web, application mobile), ainsi qu’à chercher et à imaginer de nouvelles façons de concevoir les services multimédias.",
-            "La formation se trouve à Montbéliard, qui est un site délocalisé de l’Université de Franche-Comté de Besançon.",
-            "Cette formation a été créée en 2001 et fête, en cette année 2021, ses 20 ans d'existence.",
-            "Federico Tajariol est le directeur de la formation et aussi enseignant-chercheur dans la formation. Ses domaines d’excellence sont la communication et le design.",
-            "Le nom de Rhizome provient de la racine de certaines plantes vivaces. Sa caractéristique réside dans les réserves qu’elle contient pour continuer à nourrir la plante qui lui est rattachée même si les conditions environnementales viennent à se dégrader.",
-            "Officieusement, le premier Rhizome a commencé en 2001, mais il n’avait pas encore le nom de Rhizome. C’est plus tard que le nom de Rhizome a été adopté pour ce type de projet.",
-            "Le thème pour l’année 2020-2021 est bien « Les 20 ans de PSM ». « Emoti’COM » a été le thème des projets proposés en 2010. « Hier, aujourd’hui et demain avec les médias numériques » a été le thème des projets proposés en 2015. « Mémoire des lieux & des objets » a été le thème des projets proposés en 2015 et 2016.",
-            "Le thème pour l’année 2007 est bien « Empreintes du mouvement ». « Le patrimoine de Montbéliard » est un thème de projet qui a été proposé en 2010. « Mémoire des lieux & des objets » est un thème de projet qui a été proposé en 2016 et 2017. « Les 5 ans de PSM » n’a jamais été un thème proposé.",
-            "Le thème pour l’année 2013 est bien « Quel est votre objet ? ». « Ces objets qui nous nourrissent ! » est un thème de projet qui a été proposé en 2011 et 2012. « Hier, aujourd’hui et demain avec les médias numériques » est un thème de projet qui a été proposé en 2015. « Les 15 ans de PSM » n’est pas un thème proposé.",
-            "Le thème pour l’année 2009 est bien « Mobilité et développement durable ». « Quel est votre objet ? » est un thème de projet qui a été proposé en 2013. « Le patrimoine de Montbéliard » est un thème de projet qui a été proposé en 2014. « La tête dans les étoiles » n’est pas un thème proposé.",
-            "L’étude numérique n’est pas une option qui est proposée par la formation en 2ème année de Master.",
-            "C’est en 2004 que le nom de Rhizome a été trouvé pour les projets conduits en première année de Master PSM.",
-            "Le master PSM dépend de l’UFR (unité de formation et de recherche) Sciences, techniques et gestion de l’industrie, plus communément appelée STGI.",
-            "L’UFR STGI comporte 5 départements : AES, droit, management – Langues étrangères appliquées – Sciences et énergies – Sciences de la vie et de l’environnement - Multimédia.",
-            "C’est le département Multimédia qui est celui où le master PSM est implanté. D’ailleurs, le M de PSM signifie multimédia.",
-            "Ce sont les travaux des enseignants-chercheurs de l’Équipe OUN (Laboratoire ELLIADD) et du département DISC (Institut Femto ST) qui irriguent les cours du Master PSM",
-            "Les anciens étudiants ont créé l’Alumni PSM. Alumnus, en latin, signifie élève et alumni signifie diplômé d’une université. Le nom prend donc tout son sens, puisqu’il s’agit des anciens diplômés du master PSM",
-            "Citation du professeur Ioan Roxin dans le journal local de Montbéliard en 2016, lors du projet Rhizome « La mémoire des lieux et des objets ».",
-            "Selon un article diffusé par France 3 Bourgogne Franche-Comté, ce sont pas moins de 537 Masters qui ont été délivrés (publication du 26/11/2016).",
-            "Selon Ioan Roxin (interview France 3, relayé par PlaSMa SLIC PSM), la part des étudiants qui sont issus de l’international se situe à 10 - 15 %, la part des étudiants hors Franche-Comté, 50 %, et donc localement, entre 35 et 40 %.",
-            "En 1984, le System 0.0 est apparu. En 1997, c’est le tour du Mac OS. Le Mac OS X 10.8 « Mountain Lion » est présenté en 2012. C’est donc bien le Mac OS X qui est présenté en 2001, l’année de création du master PSM.",
-            "Le plus ancien des supports présentés est la carte perforée (brevetée en 1928). La disquette « floppy » ou 5 pouces ¼ date, elle, de 1976. Dans les années 1990-2000, la disquette 3 pouces ½ était le moyen de stockage le plus utilisé. Le cloud, même s’il date des années 1990, n’est devenu un lieu de stockage des données grand public qu’à compter des années 2005-2010."
+            " Le nom complet de la formation est: \nDesign Produit et Service Multimédia.\nLa formation propose d’apprendre et de concevoir des produits multimédia (site web, application mobile),\n ainsi qu’à chercher et à imaginer de nouvelles façons de concevoir les services multimédias.",
+            " La formation se trouve à Montbéliard, qui est un site délocalisé de l’Université de Franche-Comté de Besançon.",
+            " Cette formation a été créée en 2001 et fête, en cette année 2021, ses 20 ans d'existence.",
+            " Federico Tajariol est le directeur de la formation et aussi enseignant-chercheur dans la formation. Ses domaines d’excellence sont la communication et le design.",
+            " Le nom de Rhizome provient de la racine de certaines \nplantes vivaces. Sa caractéristique réside dans les réserves qu’elle contient pour continuer à nourrir la plante qui lui est \n rattachée même si les conditions environnementales \n viennent à se dégrader.",
+            " Officieusement, le premier Rhizome a commencé en 2001,\n mais il n’avait pas encore le nom de Rhizome. C’est plus tard que le nom de Rhizome a été adopté pour ce type de projet.",
+            " Le thème pour l’année 2020-2021 est bien «Les 20 ans de PSM». «Emoti’COM» a été le thème des projets proposés en 2010. «Hier, aujourd’hui et demain avec les médias numériques» a été le thème des projets proposés en 2015.\n «Mémoire des lieux & des objets» a été le thème des projets proposés en 2015 et 2016.",
+            " Le thème pour l’année 2007 est bien «Empreintes du mouvement». \n «Le patrimoine de Montbéliard» est un thème de projet qui a \n été proposé en 2010. «Mémoire des lieux & des objets» \n est un thème de projet qui a été proposé en 2016 et 2017. \n «Les 5 ans de PSM» n’a jamais été un thème proposé.",
+            " Le thème pour l’année 2013 est bien «Quel est votre objet?». \n «Ces objets qui nous nourrissent!» est un thème de \n projet qui a été proposé en 2011 et 2012. «Hier, aujourd’hui et demain avec les médias numériques» \n est un thème de projet qui a été proposé en 2015. \n «Les 15 ans de PSM» n’est pas un thème proposé.",
+            " Le thème pour l’année 2009 est bien «Mobilité et développement durable ». « Quel est votre objet ?» est un thème de projet qui a été proposé en 2013. \n«Le patrimoine de Montbéliard» est un thème de projet qui a été proposé en 2014. « La tête dans les étoiles » n’est pas un thème proposé.",
+            " L’étude numérique n’est pas une option qui est proposée par la formation en 2ème année de Master.",
+            " C’est en 2004 que le nom de Rhizome a été trouvé pour les projets conduits en première année de Master PSM.",
+            " Le master PSM dépend de l’UFR (unité de formation et de recherche) Sciences, techniques et gestion de l’industrie, plus communément appelée STGI.",
+            " L’UFR STGI comporte 5 départements : AES, droit, management – Langues étrangères appliquées – Sciences et énergies – Sciences de la vie et de l’environnement - Multimédia.",
+            " C’est le département Multimédia qui est celui où le master \n PSM est implanté. D’ailleurs, le M de PSM signifie multimédia.",
+            " Ce sont les travaux des enseignants-chercheurs de \nl’Équipe OUN (Laboratoire ELLIADD) et du département DISC (Institut Femto ST) qui irriguent les cours du Master PSM",
+            " Les anciens étudiants ont créé l’Alumni PSM. \nAlumnus, en latin, signifie élève et alumni signifie diplômé d’une université. Le nom prend donc tout son sens, \n puisqu’il s’agit des anciens diplômés du master PSM",
+            " Citation du professeur Ioan Roxin dans le journal local de Montbéliard en 2016, lors du projet Rhizome « La mémoire des lieux et des objets ».",
+            " Selon un article diffusé par France 3 Bourgogne Franche-Comté, ce sont pas moins de 537 Masters \nqui ont été délivrés (publication du 26/11/2016).",
+            " Selon Ioan Roxin (interview France 3, relayé par \nPlaSMa SLIC PSM), la part des étudiants qui sont issus de l’international se situe à 10 - 15 %,\nla part des étudiants hors Franche-Comté, 50 %, et donc localement, entre 35 et 40 %.",
+            " En 1984, le System 0.0 est apparu. En 1997, c’est le tour du Mac OS. \n Le Mac OS X 10.8 « Mountain Lion » est présenté en 2012. \n C’est donc bien le Mac OS X qui est présenté en 2001, \nl’année de création du master PSM.",
+            " Le plus ancien des supports est la carte perforée (brevetée en 1928). La disquette «floppy» ou 5 pouces ¼ date de 1976. \n Dans les années 1990-2000, la disquette 3 pouces ½ était le moyen de stockage le plus utilisé. \n Le cloud, même s’il date des années 1990, n’est devenu un lieu de stockage des données grand public qu’à compter des années 2005-2010."
     };
 
     public static int
@@ -141,6 +142,17 @@ public class Questions extends AppCompatActivity {
 
         //On récupère le nom de l'utilisateur
         String name = getIntent().getStringExtra("NAME");
+
+        Handler handlerDelay = new Handler();
+
+        Runnable goToResults = new Runnable() {
+            public void run() {
+                Intent in = new Intent(Questions.this,ResultatsQuizz.class);
+                in.putExtra("USERNAME", name);
+                startActivity(in);
+                finish();
+            }
+        };
 
         progressBar = (ProgressBar)findViewById(R.id.quizzProgressBar);
         txtBar = (TextView)findViewById(R.id.tv_progress);
@@ -167,9 +179,7 @@ public class Questions extends AppCompatActivity {
 
         btnNext = (Button) findViewById(R.id.btnTest);
         rgroup = (RadioGroup) findViewById(R.id.radioGroup); //radioGroup wrapper de tous les radios btn
-
-        //cmpt+=1;//màj la progress bar
-
+        score.setText("Score : " + nbCorrect);
 
 
         btnNext.setOnClickListener(new View.OnClickListener() {
@@ -180,7 +190,6 @@ public class Questions extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Please select one choice", Toast.LENGTH_SHORT).show();
                     return;
                 }
-
                 //Récup l'id du btn sélectionné
                 RadioButton uniqueans = (RadioButton)findViewById(rgroup.getCheckedRadioButtonId());
                 String ansText = uniqueans.getText().toString();
@@ -189,39 +198,32 @@ public class Questions extends AppCompatActivity {
                     nbCorrect++;
                     txtResp.setText(explication[cmpt]);
                     //Toast.makeText(getApplicationContext(), "Bonne réponse", Toast.LENGTH_SHORT).show();
-                    /*Toast toast = Toast.makeText(getApplicationContext(), explication[cmpt], Toast.LENGTH_LONG);
-                    toast.setGravity(Gravity.TOP | Gravity.CENTER, 50, 50);
-                    toast.show();*/
                 } else {
                     nbFalse++;
                     txtResp.setText(explication[cmpt]);
                     //Toast.makeText(getApplicationContext(), "Mauvaise réponse", Toast.LENGTH_SHORT).show();
-                    /*Toast toast = Toast.makeText(getApplicationContext(), explication[cmpt], Toast.LENGTH_LONG);
-                    toast.setGravity(Gravity.TOP | Gravity.CENTER, 50, 50);
-                    toast.show();*/
                 }
+
                 //Passe aux questions suivantes
                 cmpt++;
 
                 //Si le score n'est pas null lui attribuer le nb de réponses correctes
                 if (score != null) {
                     score.setText("Score : " + nbCorrect);
+
                     //Si l'index des questions est inférieur à la taille réelle du nb de questions
                     //Alors MàJ les questions et les réponses jusqu'au nb total de questions
                     //Sinon passer à la seconde Activity
                     if (cmpt < questions.length) {
-                        txtQuest.setText(questions[cmpt]);
-                        btn1.setText(choixReponses[cmpt * 4]);
-                        btn2.setText(choixReponses[cmpt * 4 + 1]);
-                        btn3.setText(choixReponses[cmpt * 4 + 2]);
-                        btn4.setText(choixReponses[cmpt * 4 + 3]);
-                        progressBar.setProgress(cmpt);
-                        txtResp.setText(explication[cmpt]);
+                    txtQuest.setText(questions[cmpt]);
+                    btn1.setText(choixReponses[cmpt * 4]);
+                    btn2.setText(choixReponses[cmpt * 4 + 1]);
+                    btn3.setText(choixReponses[cmpt * 4 + 2]);
+                    btn4.setText(choixReponses[cmpt * 4 + 3]);
+                    progressBar.setProgress(cmpt);
                     } else {
-                        nbScore = nbCorrect;
-                        Intent in = new Intent(getApplicationContext(), ResultatsQuizz.class);
-                        in.putExtra("USERNAME", name);
-                        startActivity(in);
+                        //Passer à l'activity Resultat après 3Sec afin de pouvoir lire la réponse de la dernière question.
+                        handlerDelay.postDelayed(goToResults,5000);
                     }
                     txtBar.setText(cmpt + "/" + progressBar.getMax());
                 }

@@ -48,16 +48,6 @@
                 android:textStyle="bold" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/restartButton"
-                android:layout_width="140dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="14dp"
-                android:background="@drawable/button_drawable"
-                android:text="Recommencer"
-                android:textColor="@color/background"
-                android:textSize="14sp" />
-
-            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/inscription"
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
@@ -74,6 +64,16 @@
                 android:layout_marginTop="14dp"
                 android:background="@drawable/button_drawable"
                 android:text="Update PSM"
+                android:textColor="@color/background"
+                android:textSize="14sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/quitButton"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/button_drawable"
+                android:text="Quitter"
                 android:textColor="@color/background"
                 android:textSize="14sp" />
         </LinearLayout>

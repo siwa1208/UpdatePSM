@@ -3,11 +3,15 @@ package com.example.psmupdate;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,11 +22,16 @@ public class MainActivity extends AppCompatActivity {
     private TextView txtAccueil;
     private Button startBtn;
     private EditText editName;
+    private ImageView logoImg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        /*logoImg = (ImageView)findViewById(R.id.logoImg);
+        Animation rotateImg = AnimationUtils.loadAnimation(getApplicationContext()), R.animation.rotate);
+        logoImg.startAnimation(rotateImg);*/
 
         txtAccueil = (TextView)findViewById(R.id.txtHome);
         txtAccueil.setText("Bienvenue au Quizz PSM Update ! Testez et découvrez les informations sur la formation de PSM." +
@@ -37,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String name =  editName.getText().toString();
-
                 if(name.isEmpty()){
                     Toast.makeText(MainActivity.this, "Veuillez entrer votre nom s'il vous plaît", Toast.LENGTH_SHORT).show();
                 } else {

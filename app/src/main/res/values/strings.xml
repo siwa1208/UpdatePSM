@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">PSMUpdate</string>
-    <string name="startQuizz">COMMENCER LE QUIZZ</string>
     <string name="logo">TODO</string>
     <string name="txtquestion">txtQuest</string>
     <string name="btnTest">Valider</string>

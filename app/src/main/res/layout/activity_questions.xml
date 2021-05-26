@@ -17,22 +17,15 @@
         app:srcCompat="@drawable/logoreal" />
 
     <TextView
-        android:id="@+id/txtQuest"
+        android:id="@+id/score"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_margin="10dp"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:textColor="@color/background"
-        android:background="@drawable/questionlayout"
-        />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="120dp"
-        android:gravity="center"
+        android:textColor="@color/white"
         android:textStyle="bold"
-        android:textColor="@color/white"/>
+        android:layout_marginBottom="20dp"
+        android:textSize="20sp"
+        />
 
     <LinearLayout
         android:id="@+id/linearLayoutRadio"
@@ -65,13 +58,14 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/score"
+        android:id="@+id/txtQuest"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
+        android:layout_margin="5dp"
         android:gravity="center"
-        android:textColor="@color/white"
+        android:textColor="@color/background"
+        android:background="@drawable/questionlayout"
         android:textStyle="bold"
-        android:layout_marginBottom="20dp"
         />
 
     <RadioGroup
@@ -85,46 +79,56 @@
             android:id="@+id/radioButton1"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@drawable/reponselayout"
+            android:background="@drawable/questionlayout"
             android:button="@null"
             android:drawableRight="@android:drawable/btn_radio"
             android:gravity="center"
             android:text="@string/radiobutton1"
             android:textColor="@color/background"
+            android:textStyle="bold"
             />
 
         <RadioButton
             android:id="@+id/radioButton2"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:background="@drawable/reponselayout"
+            android:background="@drawable/questionlayout"
             android:button="@null"
             android:drawableRight="@android:drawable/btn_radio"
             android:gravity="center"
             android:text="@string/radiobutton1"
-            android:textColor="@color/background" />
+            android:textColor="@color/background"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
+            />
 
         <RadioButton
             android:id="@+id/radioButton3"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:background="@drawable/reponselayout"
+            android:background="@drawable/questionlayout"
             android:button="@null"
             android:drawableRight="@android:drawable/btn_radio"
             android:gravity="center"
             android:text="@string/radiobutton1"
-            android:textColor="@color/background" />
+            android:textColor="@color/background"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
+            />
 
         <RadioButton
             android:id="@+id/radioButton4"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:background="@drawable/reponselayout"
+            android:background="@drawable/questionlayout"
             android:button="@null"
             android:drawableRight="@android:drawable/btn_radio"
             android:gravity="center"
             android:text="@string/radiobutton1"
-            android:textColor="@color/background" />
+            android:textColor="@color/background"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
+            />
     </RadioGroup>
 
     <LinearLayout
@@ -133,15 +137,25 @@
         android:orientation="vertical"
         android:gravity="center">
 
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="395dp"
+            android:layout_height="133dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/reponselayout"
+            android:gravity="center"
+            android:textColor="@color/background" />
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnTest"
             android:layout_width="140dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
+            android:layout_marginTop="5dp"
             android:background="@drawable/button_drawable"
             android:text="@string/btnTest"
             android:textColor="@color/background"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            />
     </LinearLayout>
 
 </LinearLayout>

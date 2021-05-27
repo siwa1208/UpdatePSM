@@ -138,6 +138,8 @@ public class Questions extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //Enlever la barre de titre
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_questions);
 
         //On récupère le nom de l'utilisateur

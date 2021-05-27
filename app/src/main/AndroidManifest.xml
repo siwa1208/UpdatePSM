@@ -8,19 +8,35 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.PSMUpdate">
-        <activity android:name=".ResultatsQuizz"></activity>
-        <activity android:name=".Questions" />
+        android:theme="@style/Theme.PSMUpdateNoStatusBar">
+
+        <activity
+            android:name=".SplashScreen"
+            android:theme="@style/Theme.PSMUpdate"
+            android:windowSoftInputMode="stateVisible"
+            >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+
+        <activity android:name=".ResultatsQuizz"
+            android:label="Résultats"/>
+
+        <activity android:name=".Questions"
+            android:label="Quiz"/>
+
         <activity
             android:name=".MainActivity"
+            android:label="Accueil"
             android:theme="@style/Theme.PSMUpdate"
             android:windowSoftInputMode="stateVisible">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

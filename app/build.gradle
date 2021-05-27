@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.psmupdate"
-        minSdkVersion 16
+        minSdkVersion 29
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -28,7 +28,7 @@ android {
     }
 
     task wrapper(type: Wrapper){
-        gradleVersion = '6.8.3'
+        gradleVersion = '7.0.2'
     }
 }
 

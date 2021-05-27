@@ -17,6 +17,8 @@ public class ResultatsQuizz extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //Enlever la barre de titre
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_resultats_quizz);
 
         res = (TextView)findViewById(R.id.resultat);
@@ -33,7 +35,7 @@ public class ResultatsQuizz extends AppCompatActivity {
             res.setText("Félicitation " + str + " ton score est de : " + Questions.nbCorrect +"/"+ Questions.cmpt + " \uD83C\uDF89\uD83C\uDF89 \n" +
                             "L'équipe PSM Update te remercie d'avoir participé," +
                             " en espérant que ça t'ai plu et que tu as appris des choses concernant le Master de PSM !" +
-                            "Si tu souhaites avoir plus d'informations sur la formation ou Candidater clique sur l'un des boutons ci dessous. À bientôt \uD83D\uDE01 !");
+                            " Si tu souhaites avoir plus d'informations sur la formation ou Candidater clique sur l'un des boutons ci dessous. À bientôt \uD83D\uDE01 !");
         }
 
         btnQuit = (Button)findViewById(R.id.quitButton);

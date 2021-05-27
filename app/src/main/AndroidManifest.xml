@@ -22,10 +22,14 @@
         </activity>
 
         <activity android:name=".ResultatsQuizz"
-            android:label="Résultats"/>
+            android:label="Résultats"
+            android:theme="@style/Theme.PSMUpdate"
+            />
 
         <activity android:name=".Questions"
-            android:label="Quiz"/>
+            android:label="Quiz"
+            android:theme="@style/Theme.PSMUpdate"
+            />
 
         <activity
             android:name=".MainActivity"

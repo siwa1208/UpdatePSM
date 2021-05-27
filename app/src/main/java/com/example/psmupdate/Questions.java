@@ -225,7 +225,7 @@ public class Questions extends AppCompatActivity {
                     progressBar.setProgress(cmpt);
                     } else {
                         //Passer à l'activity Resultat après 3Sec afin de pouvoir lire la réponse de la dernière question.
-                        handlerDelay.postDelayed(goToResults,5000);
+                        handlerDelay.postDelayed(goToResults,3500);
                     }
                     txtBar.setText(cmpt + "/" + progressBar.getMax());
                 }

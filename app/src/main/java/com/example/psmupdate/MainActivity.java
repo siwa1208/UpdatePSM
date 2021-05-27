@@ -2,20 +2,17 @@ package com.example.psmupdate;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import static android.content.ContentValues.TAG;
 
 public class MainActivity extends AppCompatActivity {
     //Elements de la UI
@@ -56,5 +53,19 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        //Méthode qui va écouter le changement de focus du editText, s'il est focus le keyboard apparaît sinon il disparaît
+        editName.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    hideKeyboard(v);
+                }
+            }
+        });
+    }
+    public void hideKeyboard(View v) {
+        InputMethodManager inputMethodManager =(InputMethodManager)getSystemService(Activity.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(v.getWindowToken(), 0);
     }
 }
